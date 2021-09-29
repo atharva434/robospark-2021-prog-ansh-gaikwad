@@ -86,26 +86,25 @@ int isBalanced(char exp[]){
     char A[3]={'{','[','('};
     char B[3]={'}',']',')'};
 
-
     for(int i=0;i<strlen(exp);i++)
     {
         for(int j=0;j<3;j++)
-         if(exp[i]==A[j])
+         if(exp[i]==A[j]) //opening brackets pushed to stack
             {
                 push(exp[i]);
             }
 
-        for(int k=0;k<3;k++)
+        for(int k=0;k<3;k++)  // Closed brackets are checked with stack
         {
             if(exp[i]==B[k])
             {
-                if(A[k]==topElement())
+                if(A[k]==topElement()) // if corresponding element exist in stack then pop
                 {
                     pop();
                 }
 
                 else{
-                printf("\nA\n");
+
                 return 0;
             }
             }
@@ -114,7 +113,7 @@ int isBalanced(char exp[]){
 
     }
 
-    if(isEmpty())
+    if(isEmpty()) //ordered  when stack is empty after all pops
     {
         return 1;
     }

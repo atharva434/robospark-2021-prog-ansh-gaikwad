@@ -19,8 +19,8 @@ class Rectangle{
             return b;
         }
  Rectangle(){
-    l=10;
-    b=2;
+    l=0;
+    b=0;
 
 }
 Rectangle(int x){
